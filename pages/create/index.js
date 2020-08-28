@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/index.scss'
+import styles from '../../styles/create/index.scss'
 
 export default function Home() {
   return (
@@ -10,11 +10,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
         <ul>
-          <li><a href='./create'>Create</a></li>
+          <li><a href='./create/write'>Write</a></li>
         </ul>
       </main>
     </div>
