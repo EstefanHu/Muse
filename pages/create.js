@@ -7,8 +7,24 @@ import PlotForm from '../components/create/PlotForm'
 
 export default function Create() {
   const [entry, setEntry] = React.useState({})
+  const [addingNode, setAddingNode] = React.useState(false)
 
   const addNode = newEntry => setEntry({ ...entry, newEntry })
+
+  const startNode = type => {
+
+  }
+
+  const renderNodeForm = type => {
+    switch (type) {
+      case 'text':
+        return <TextForm />
+      case 'image':
+        return <ImageForm />
+      case 'plot':
+        return <PlotForm />
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -26,6 +42,13 @@ export default function Create() {
                 <TrackNode type='text' />
               })}
         </ul>
+        {
+          !addingNode ?
+            <section>
+              <button onClick={() => startNode}>Next</button>
+            </section>
+            : <h1>Hello</h1>
+        }
       </main>
     </div>
   )
