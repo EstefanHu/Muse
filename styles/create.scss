@@ -1,0 +1,19 @@
+@import './index.scss';
+
+main.createMain {
+  ul {
+    li {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      border: 1px solid lightgrey;
+      background-color: blue;
+
+      &.textTrackNode {
+        background-color: rgba(255, 50, 50, 0.6);
+      }
+    }
+  }
+
+  @media screen {}
+}
