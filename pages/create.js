@@ -3,26 +3,49 @@ import styles from '../styles/create.scss'
 
 import TextForm from '../components/create/TextForm'
 import ImageForm from '../components/create/ImageForm'
+import AudioForm from '../components/create/AudioForm'
+import VideoForm from '../components/create/VideoForm'
 import PlotForm from '../components/create/PlotForm'
 
 export default function Create() {
   const [entry, setEntry] = React.useState({})
   const [addingNode, setAddingNode] = React.useState(false)
+  const [newNodeType, setNewNodeType] = React.useState(null)
 
   const addNode = newEntry => setEntry({ ...entry, newEntry })
 
   const startNode = type => {
-
+    setNewNodeType(type)
+    setAddingNode(true)
   }
 
-  const renderNodeForm = type => {
-    switch (type) {
+  const renderNodeForm = () => {
+    switch (newNodeType) {
       case 'text':
-        return <TextForm />
+        return <TextForm
+          addNode={addNode}
+          setAddingNode={setAddingNode}
+        />
       case 'image':
-        return <ImageForm />
+        return <ImageForm
+          addNode={addNode}
+          setAddingNode={setAddingNode}
+        />
+      case 'audio':
+        return <AudioForm
+          addNode={addNode}
+          setAddingNode={setAddingNode}
+        />
+      case 'video':
+        return <VideoForm
+          addNode={addNode}
+          setAddingNode={setAddingNode}
+        />
       case 'plot':
-        return <PlotForm />
+        return <PlotForm
+          addNode={addNode}
+          setAddingNode={setAddingNode}
+        />
     }
   }
 
@@ -45,9 +68,14 @@ export default function Create() {
         {
           !addingNode ?
             <section>
-              <button onClick={() => startNode}>Next</button>
+              <span>
+                <button onClick={() => startNode('text')}>Add Text</button>
+                <button onClick={() => startNode('image')}>Add Image</button>
+                <button onClick={() => startNode('audio')}>Add Audio</button>
+                <button onClick={() => startNode('video')}>Add Video</button>
+              </span>
             </section>
-            : <h1>Hello</h1>
+            : renderNodeForm()
         }
       </main>
     </div>
