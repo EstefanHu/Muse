@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/create.scss'
+import styles from '../styles/create.module.sass'
 
 import TextForm from '../components/create/TextForm'
 import ImageForm from '../components/create/ImageForm'

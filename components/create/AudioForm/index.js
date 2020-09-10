@@ -1,4 +1,4 @@
-import styles from './audio-form.scss'
+import styles from './audio-form.module.sass'
 
 export default function AudioForm() {
 

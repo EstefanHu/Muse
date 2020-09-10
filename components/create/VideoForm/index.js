@@ -1,4 +1,4 @@
-import styles from './video-form.scss'
+import styles from './video-form.module.sass'
 
 export default function VideoForm() {
 

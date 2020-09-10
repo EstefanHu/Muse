@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 
-import styles from './plot-form.scss'
+import styles from './plot-form.module.sass'
 
 const CSRMap = dynamic(() => import('./Map'), {
   loading: () => <p>Loading...</p>,

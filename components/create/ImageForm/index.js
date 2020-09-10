@@ -1,4 +1,4 @@
-import styles from './image-form.scss'
+import styles from './image-form.module.sass'
 
 export default function ImageForn() {
 

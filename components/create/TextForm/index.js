@@ -1,4 +1,4 @@
-import styles from './text-form.scss'
+import styles from './text-form.module.sass'
 
 export default function TextForm() {
 
