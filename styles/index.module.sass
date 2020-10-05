@@ -61,7 +61,7 @@ div.container
 
     .hero
       width: 100vw
-      height: 800px
+      height: 600px
       background-color: $primary-color-light
       position: relative
       z-index: 0
@@ -78,7 +78,6 @@ div.container
         align-items: flex-end
         padding-bottom: 5px
         transform: translate(-100vw, -60vw) rotate(-20deg)
-        z-index: inherit
 
         h2
           margin: 0 5px
@@ -90,22 +89,36 @@ div.container
         position: absolute
         right: 0
         bottom: 0
-        width: 100vw
-        height: 600px
+        width: 200vw
+        height: 100vw
+        background-color: $primary-color
+        transform: translate(100vw, 60vw) rotate(-20deg)
+
+      div
+        height: inherit
+        width: inherit
         display: flex
         flex-direction: column
-        color: $primary-color-light
-        background-color: $primary-color
-        padding-bottom: 10px
-        font-size: 4rem
-        font-weight: bold
-        transform: translate(350px, 250px) rotate(-20deg)
-        z-index: inherit
+        justify-content: center
+        align-items: center
 
-      h1
-        font-size: 30rem
-        color: $primary-color-dark
-        padding-top: 160px
+        h1
+          font-size: 7rem
+          color: $primary-color-dark
+
+        p
+          font-weight: 500
+
+        button
+          border: none
+          border-radius: 5px
+          width: 150px
+          height: 40px
+          background-color: $primary-color-dark
+          color: $primary-color-light
+          font-weight: bold
+          font-size: 0.9rem
+          margin-top: 30px
 
       @media only screen and (min-width: 400px)
 
@@ -117,6 +130,15 @@ div.container
             font-size: 2rem
             margin: 0 10px
 
+        footer
+          width: 1800px
+          transform: translate(850px, 70vw) rotate(-20deg)
+
+        div
+
+          h1
+            font-size: 10rem
+
       @media only screen and (min-width: 1000px)
 
         header
@@ -124,8 +146,17 @@ div.container
           transform: translate(-1000px, -80vw) rotate(-20deg)
 
           h2
-            font-size: 2.5rem
+            font-size: 3rem
             display: inline-block
+
+        footer
+          width: 2500px
+          transform: translate(1000px, 80vw) rotate(-20deg)
+
+        div
+
+          h2
+            font-size: 30rem
 
       @media only screen and (min-width: 1600px)
         header

@@ -41,7 +41,11 @@ export default function Home() {
             <h2>Project:Muse</h2>
             <h2>Project:Muse</h2>
           </header>
-          <h1>:Muse</h1>
+          <div className={styles.heroContent}>
+            <h1>:Muse</h1>
+            <p>Connecting inspiration</p>
+            <button onClick={() => console.log('hello world')}>Login</button>
+          </div>
           <footer className={styles.heroFooter}>
 
           </footer>
