@@ -2,6 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import firebase from 'firebase'
+
 import styles from '../styles/index.module.sass'
 
 export default function Home() {
@@ -16,11 +18,40 @@ export default function Home() {
 
       <main className={styles.splashMain}>
         <nav>
-
+          <h1><span>Project</span>:Muse</h1>
+          <ul>
+            <li>Our Story</li>
+            <li><span>Why</span> Seattle</li>
+            <li>Follow <span>Project</span></li>
+          </ul>
         </nav>
 
         <section className={styles.hero}>
-          <h1>Project:Muse</h1>
+          <header>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+            <h2>Project:Muse</h2>
+          </header>
+          <h1>:Muse</h1>
+          <footer className={styles.heroFooter}>
+
+          </footer>
+        </section>
+
+        <section className={styles.whatIsIt}>
+
+        </section>
+
+        <section className={styles.old}>
           <h2>An experimental story telling experience</h2>
           <div className={styles.authWrapper}>
             {isNew ? <Register setIsNew={setIsNew} /> : <Login setIsNew={setIsNew} />}

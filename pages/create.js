@@ -12,11 +12,17 @@ export default function Create() {
   const [addingNode, setAddingNode] = React.useState(false)
   const [newNodeType, setNewNodeType] = React.useState(null)
 
+  const [track, setTrack] = React.useState([])
+
   const addNode = newEntry => setEntry({ ...entry, newEntry })
 
   const startNode = type => {
     setNewNodeType(type)
     setAddingNode(true)
+  }
+
+  const reviewNode = idx => {
+    console.log(idx)
   }
 
   const renderNodeForm = () => {
@@ -49,6 +55,17 @@ export default function Create() {
     }
   }
 
+  React.useEffect(() => {
+    const initiateNewNode = document.getElementById('initiateNewNodeId')
+    const newNodeForm = document.getElementById('newNodeFormWrapperId')
+    const openNewNodeForm = () => {
+      newNodeForm.classList.add('create_createActive')
+    }
+    initiateNewNode.addEventListener('click', openNewNodeForm)
+
+    return () => initiateNewNode.removeEventListener('click', openNewNodeForm)
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -57,6 +74,25 @@ export default function Create() {
       </Head>
 
       <main className={styles.createMain}>
+        <div className="progressTracker">
+          <div className="track">
+            {track.map((node, idx) => (
+              <div
+                className="trackNode"
+                onClick={() => reviewNode(idx)}
+              >
+                <p>{idx}</p>
+              </div>
+            ))}
+          </div>
+          <h1>Create Story</h1>
+          <div
+            id="initiateNewNodeId"
+            className={styles.actionButton}
+          >
+            <p>Create New Node</p>
+          </div>
+        </div>
         <ul>
           {Object
             .keys(entry)
@@ -66,7 +102,7 @@ export default function Create() {
               })}
         </ul>
         {
-          !addingNode ?
+          addingNode ?
             <section>
               <span>
                 <button onClick={() => startNode('text')}>Add Text</button>
@@ -78,6 +114,16 @@ export default function Create() {
             : renderNodeForm()
         }
       </main>
+      <div
+        id="newNodeFormWrapperId"
+        className={styles.newNodeFormWrapper}
+      >
+        <div className={styles.newNodeFormContainer}>
+          <form>
+
+          </form>
+        </div>
+      </div>
     </div>
   )
 }

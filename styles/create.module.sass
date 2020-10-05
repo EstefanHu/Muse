@@ -3,7 +3,6 @@
 
 .container
   min-height: 100vh
-  padding: 0 0.5rem
   display: flex
   flex-direction: column
   justify-content: center
@@ -11,6 +10,47 @@
   background-color: rgb(245, 245, 245)
 
 main.createMain
+  width: 1000px
+  margin: 0 auto
+
+  .progressTracker
+    width: 100%
+
+    .track
+      width: inherit
+      display: flex
+      justify-content: flex-start
+      flex-wrap: wrap
+
+      .trackNode
+        cursor: pointer
+        height: 30px
+        width: 30px
+        border-radius: 15px
+        border: 1px solid grey
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: rgb(250, 250, 250)
+        position: relative
+        margin: 10px
+
+        &:hover
+          background-color: rgb(230, 230, 230)
+
+        &::before
+          content: ''
+          border: 1px solid grey
+          height: 1px
+          width: 10px
+          position: absolute
+          left: -10px
+          top: 15px
+
+        p
+          font-size: 1rem
+          font-color: grey
+
   ul
     li
       height: 30px
@@ -42,3 +82,40 @@ main.createMain
         font-size: 1rem
 
   @media screen
+
+  .actionButton
+    width: 200px
+    height: 45px
+    border: 1px solid black
+    border-radius: 5px
+    background-color: black
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: 0.4s
+    cursor: pointer
+
+    &:hover
+      border-width: 2px
+      background-color: white
+      color: black
+
+    p
+      font-weight: bold
+
+.newNodeFormWrapper
+  width: 100vw
+  height: 100vh
+  z-index: 10
+  position: absolute
+  top: 100vh
+
+  .newNodeFormContainer
+    height: 200px
+    width: 200px
+    margin: 0 auto
+    background-color: brown
+
+.createActive
+  background-color: pink
